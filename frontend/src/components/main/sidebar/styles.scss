@@ -1,0 +1,28 @@
+.sidebar-wrapper {
+	display: grid;
+	grid-template-rows: min-content min-content;
+	color: rgba(66, 66, 66, 1);
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.property-wrapper {
+	display: grid; 
+	grid-template-rows: min-content auto min-content; 
+	padding-left: 20px; 
+	padding-right: 20px;
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 20px;
+}
+.property-title {
+	font-size: 1.4em;
+	padding-top: 10px;
+}
+.sidebar-item-text {
+	 font-size: 4.8em;
+	 font-weight: 700;
+	 justify-self: center;
+}
+.sidebar-item-title {
+	font-size: 2.8em;
+	font-weight: 700;	
+}

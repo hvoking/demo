@@ -1,0 +1,6 @@
+.left {
+	 display: grid; 
+	 grid-template-rows: 5fr 1fr;
+	 border-right: 1px solid rgba(240, 240, 240, 1);
+	 align-self: center;
+}

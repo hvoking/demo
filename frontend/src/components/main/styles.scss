@@ -1,0 +1,12 @@
+.main-wrapper {
+	display: grid;
+	background-color: rgba(240, 240, 240, 1);
+	height: calc(var(--vh, 1vh) * 100);
+  	max-height: calc(var(--vh, 1vh) * 100);
+  	display: grid;
+  	grid-template-columns: 75px auto 25%;
+}
+
+.right-sidebar {
+	background-color: rgba(212, 212, 212, 1);
+}
