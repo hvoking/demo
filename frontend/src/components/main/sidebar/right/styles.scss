@@ -1,5 +1,9 @@
 .right {
 	display: grid; 
-	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 30px 1fr;
 	text-align: end;
+}
+.bars-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
