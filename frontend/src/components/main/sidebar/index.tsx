@@ -1,20 +1,16 @@
 // App imports
-import { Left } from './left';
-import { Right } from './right';
-import { Footer } from './footer';
+import { Stats } from './stats';
+import { Pictures } from './pictures'
 import './styles.scss';
 
 export const Sidebar = () => {
 	return (
 		<div className="sidebar-wrapper">
-			<div className="property-wrapper">
-				<div className="property-title">Imóveis</div>
-				<div style={{display: "grid", gridTemplateColumns: "1fr 1fr"}}>
-					<Left/>
-					<Right/>
-				</div>
-				<Footer/>
+			<Stats/>
+			<div className="property-list-wrapper">
+				<div className="property-list-title">Listagem de imóveis</div>
 			</div>
+			<Pictures/>
 		</div>
 	)
 }

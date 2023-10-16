@@ -20,11 +20,11 @@ export const blumenau = {
   zoom: 15,
 };
 export const brusque = {
-  bearing: -34,
   latitude: -27.09640194555676,
   longitude: -48.91395564596401,
-  pitch: 58.43,
-  zoom: 14,
+  bearing: -12.02,
+  pitch: 60,
+  zoom: 16,
 };
 
 export const chapeco = {

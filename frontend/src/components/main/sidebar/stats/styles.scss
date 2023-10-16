@@ -1,0 +1,27 @@
+.stats-wrapper {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.stats {
+	display: grid; 
+	grid-template-rows: min-content auto min-content; 
+	padding-left: 20px; 
+	padding-right: 20px;
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 20px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, .12);
+}
+.stats-title {
+	font-size: 1.4em;
+	padding-top: 10px;
+}
+.sidebar-item-text {
+	 font-size: 4.8em;
+	 font-weight: 700;
+	 justify-self: center;
+	 align-self: center;
+}
+.sidebar-item-title {
+	font-size: 2.8em;
+	font-weight: 700;	
+}

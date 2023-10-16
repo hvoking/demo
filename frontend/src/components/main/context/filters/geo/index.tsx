@@ -13,11 +13,11 @@ export const useGeo = () => {
 }
 
 export const GeoProvider = ({children}: any) => {
-	const [ cityName, setCityName ] = useState<any>("blumenau");
+	const [ cityName, setCityName ] = useState<any>("brusque");
 	const [ cityId, setCityId ] = useState<any>(37);
 	const [ placeId, setPlaceId ] = useState<any>(null);
 	
-	const [ viewport, setViewport ] = useState(Locations.blumenau);
+	const [ viewport, setViewport ] = useState(Locations.brusque);
 	const [ placeCoordinates, setPlaceCoordinates ] = useState<any>(null);
 
 	const [ geocodingLongitude, setGeocodingLongitude ] = useState<any>(null);

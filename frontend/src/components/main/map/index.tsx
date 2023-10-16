@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 // App imports
 import { MapControllers } from './controllers';
 import { Buildings } from './buildings';
+import { Pin } from './pin';
 import './styles.scss';
 
 // Context imports
@@ -46,6 +47,7 @@ export const MapContainer = () => {
 				preserveDrawingBuffer={true}
 			>
 				<DeckGLOverlay glOptions={{preserveDrawingBuffer: true}}/>
+				<Pin/>
 				<Buildings/>
 				<MapControllers/>
 			</Map>
