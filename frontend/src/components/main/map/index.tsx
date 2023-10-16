@@ -10,6 +10,8 @@ import './styles.scss';
 // Context imports
 import { useMapbox } from '../context/mapbox';
 import { useGeo } from '../context/filters/geo';
+// Layers imports
+import { useIconLayer } from '../context/layers/icon';
 
 // Third-party imports
 import { Map, useControl } from 'react-map-gl';
@@ -26,6 +28,9 @@ const DeckGLOverlay = (props: DeckProps) => {
 export const MapContainer = () => {
 	const { mapRef, currentBasemap } = useMapbox();
 	const { viewport, setMarker, setPlaceCoordinates } = useGeo();
+	const { iconLayer } = useIconLayer();
+
+	const layers: any = [ iconLayer ];
 
 	const onDblClick = useCallback((event: any) => {
 		const lng = event.lngLat.lng;
@@ -46,8 +51,11 @@ export const MapContainer = () => {
 				antialias={true}
 				preserveDrawingBuffer={true}
 			>
-				<DeckGLOverlay glOptions={{preserveDrawingBuffer: true}}/>
-				<Pin/>
+				<DeckGLOverlay 
+					layers={layers} 
+					glOptions={{preserveDrawingBuffer: true}}
+				/>
+				{/*<Pin/>*/}
 				<Buildings/>
 				<MapControllers/>
 			</Map>

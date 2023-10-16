@@ -24,7 +24,7 @@ export const brusque = {
   longitude: -48.91395564596401,
   bearing: -12.02,
   pitch: 60,
-  zoom: 16,
+  zoom: 6,
 };
 
 export const chapeco = {
