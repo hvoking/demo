@@ -16,3 +16,9 @@
 	padding: 15px;
 	font-size: 1.4em;
 }
+@media screen and (max-width: 1000px) {
+	.sidebar-wrapper {
+		grid-template-rows: min-content min-content min-content;
+		overflow-y: scroll;
+	}
+}

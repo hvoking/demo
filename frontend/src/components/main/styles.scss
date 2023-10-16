@@ -1,5 +1,4 @@
 .main-wrapper {
-	display: grid;
 	background-color: rgba(240, 240, 240, 1);
 	height: calc(var(--vh, 1vh) * 100);
   	max-height: calc(var(--vh, 1vh) * 100);
@@ -9,4 +8,18 @@
 
 .right-sidebar {
 	background-color: rgba(212, 212, 212, 1);
+	display: grid; 
+	justify-items: center; 
+	padding-top: 15px;
+}
+@media screen and (max-width: 1000px) {
+	.main-wrapper {
+	  	grid-template-columns: auto;
+	  	grid-template-rows: 50px 2fr 3fr;
+	}
+	.right-sidebar {
+		justify-items: start;
+		padding-top: 5px;
+		padding-left: 10px;
+	}
 }

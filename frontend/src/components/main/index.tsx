@@ -18,7 +18,9 @@ export const Main = () => {
 	return (
 		<MainProvider>
 			<div className="main-wrapper">
-				<div className="right-sidebar"></div>
+				<div className="right-sidebar">
+					<img src="static/utils/logoImobia.png" width="40px" alt="logo-imobia"/>
+				</div>
 				<MapContainer/>
 				<Sidebar/>
 			</div>
