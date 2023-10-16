@@ -2,16 +2,16 @@
 import { FiltersProvider } from './filters';
 import { MapboxProvider } from './mapbox';
 import { SizesProvider } from './sizes';
-import { LayersProvider } from './layers';
+import { MapsProvider } from './maps';
 
 export const MainProvider = ({children}: any) => {
   return (
     <FiltersProvider>
     <MapboxProvider>
     <SizesProvider>
-    <LayersProvider>
+    <MapsProvider>
       {children}
-    </LayersProvider>
+    </MapsProvider>
     </SizesProvider>
     </MapboxProvider>
     </FiltersProvider>

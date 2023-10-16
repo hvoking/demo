@@ -3,17 +3,30 @@ import { Description } from './description';
 import { propertyDict } from '../../utils/property';
 import './styles.scss';
 
+// Context imports
+import { useProperty } from '../../context/filters/property';
+
 export const Pictures = () => {
+	const { currentId, setCurrentId } = useProperty();
+
 	return (
 		<div className="pictures-wrapper">
 			<div className="pictures">
 				{propertyDict.map((item: any, index: any) => {
 					return (
-						<div key={index} className="pictures-box">
+						<div 
+							key={index} 
+							className="pictures-box"
+							style={{
+								border: currentId === item.codigo ? 
+								"2px solid rgba(255, 0, 0, 1)" : 
+								"2px solid rgba(0, 0, 0, 0)"
+							}}
+						>
 							<div className="pictures-item">
 								<div 
 									style={{
-										width: "12px", 
+										width: "12px",
 										backgroundColor: 
 											item.disponivel === "1" ?
 											"rgba(102, 187, 106, 1)" :
@@ -29,7 +42,7 @@ export const Pictures = () => {
 									height="70"
 									style={{padding: "5px", borderRadius: "10px"}}
 								/>
-								<Description item={item}/>
+								<Description item={item} setCurrentId={setCurrentId}/>
 							</div>
 						</div>
 					)}

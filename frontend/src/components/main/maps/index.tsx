@@ -5,13 +5,14 @@ import { useCallback } from 'react';
 import { MapControllers } from './controllers';
 import { Buildings } from './buildings';
 import { Pin } from './pin';
+import { Tooltip } from './tooltip';
 import './styles.scss';
 
 // Context imports
 import { useMapbox } from '../context/mapbox';
 import { useGeo } from '../context/filters/geo';
 // Layers imports
-import { useIconLayer } from '../context/layers/icon';
+import { useIconLayer } from '../context/maps/layers/icon';
 
 // Third-party imports
 import { Map, useControl } from 'react-map-gl';
@@ -56,6 +57,7 @@ export const MapContainer = () => {
 					glOptions={{preserveDrawingBuffer: true}}
 				/>
 				{/*<Pin/>*/}
+				<Tooltip/>
 				<Buildings/>
 				<MapControllers/>
 			</Map>

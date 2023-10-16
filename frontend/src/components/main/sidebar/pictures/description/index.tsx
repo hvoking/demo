@@ -6,9 +6,17 @@ import * as d3 from 'd3';
 
 const siFormat = d3.format(",");
 
-export const Description = ({ item }: any) => {
+export const Description = ({ item, setCurrentId }: any) => {
+	const onMouseOver = (e: any, item: any) => {
+		setCurrentId(item.codigo);
+	}
+
 	return (
-		<div className="pictures-description-wrapper">
+		<div 
+			className="pictures-description-wrapper"
+			onMouseOver={(e: any) => onMouseOver(e, item)}
+			onMouseOut={() => setCurrentId(null)}
+		>
 			<div>
 				<div className="cod-wrapper">
 					Código: {item.codigo}

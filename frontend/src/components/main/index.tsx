@@ -1,5 +1,5 @@
 // App imports
-import { MapContainer } from './map';
+import { MapContainer } from './maps';
 import { Sidebar } from './sidebar';
 import './styles.scss';
 

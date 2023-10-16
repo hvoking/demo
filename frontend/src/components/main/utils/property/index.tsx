@@ -122,7 +122,7 @@ export const propertyDict: any = [
 	},
 	{
 		codigoInterno: "1015",
-		codigo: "46",
+		codigo: "47",
 		nome: "Galpão",
 		negocio: "locacão",
 		tipo: "Galpão",
