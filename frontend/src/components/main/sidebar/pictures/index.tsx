@@ -39,7 +39,7 @@ export const Pictures = () => {
 									src={item.imgUrl}
 									alt="property"
 									width="120"
-									height="70"
+									height="80"
 									style={{padding: "5px", borderRadius: "10px"}}
 								/>
 								<Description item={item} setCurrentId={setCurrentId}/>
