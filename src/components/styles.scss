@@ -5,6 +5,7 @@
   	display: grid;
   	grid-template-columns: 75px auto 25%;
 }
+
 @media screen and (max-width: 1000px) {
 	.main-wrapper {
 	  	grid-template-columns: auto;
