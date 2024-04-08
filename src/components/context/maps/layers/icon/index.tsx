@@ -33,8 +33,8 @@ export const IconLayerProvider = ({children}: any) => {
   		setPropertyHoverInfo(info);
   	}
 
-	const iconMapping = 'static/icons/mapping.json';
-	const iconAtlas = 'static/icons/atlas.png';
+	const iconMapping = process.env.PUBLIC_URL + '/static/icons/mapping.json';
+	const iconAtlas = process.env.PUBLIC_URL + '/static/icons/atlas.png';
 
 	const iconLayer = 
 		new IconLayer({
