@@ -1,0 +1,13 @@
+.main-wrapper {
+	background-color: rgba(240, 240, 240, 1);
+	height: calc(var(--vh, 1vh) * 100);
+  	max-height: calc(var(--vh, 1vh) * 100);
+  	display: grid;
+  	grid-template-columns: 75px auto 25%;
+}
+@media screen and (max-width: 1000px) {
+	.main-wrapper {
+	  	grid-template-columns: auto;
+	  	grid-template-rows: 50px 2fr 3fr;
+	}
+}

@@ -1,1 +1,0 @@
-from .details_view import *
