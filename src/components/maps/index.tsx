@@ -50,10 +50,7 @@ export const MapContainer = () => {
 				antialias={true}
 				preserveDrawingBuffer={true}
 			>
-				<DeckGLOverlay 
-					layers={layers} 
-					glOptions={{preserveDrawingBuffer: true}}
-				/>
+				<DeckGLOverlay layers={layers} glOptions={{preserveDrawingBuffer: true}}/>
 				<Tooltip/>
 				<Controllers/>
 			</Map>

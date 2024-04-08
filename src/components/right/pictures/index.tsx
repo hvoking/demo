@@ -1,13 +1,12 @@
 // App imports
 import { Description } from './description';
-import { propertyDict } from '../../utils/property';
 import './styles.scss';
 
 // Context imports
 import { useProperty } from '../../context/filters/property';
 
 export const Pictures = () => {
-	const { currentId, setCurrentId } = useProperty();
+	const { currentId, setCurrentId, propertyDict } = useProperty();
 
 	return (
 		<div className="pictures-wrapper">

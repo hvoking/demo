@@ -9,7 +9,7 @@ export const ReCenter = ({ setViewport, viewport, placeCoordinates }: any) => {
 	return (
 		<img 
 			className="recenter-image" 
-			src="static/components/map/reCenter.svg" 
+			src="static/icons/reCenter.svg" 
 			alt="reCenter" 
 			onClick={reCenter}
 		/>

@@ -1,9 +1,6 @@
 // React imports
 import { useContext, createContext } from 'react';
 
-// App imports
-import { propertyDict } from '../../../../utils/property';
-
 // Context imports
 import { useTooltip } from '../../../../context/maps/tooltip';
 import { useProperty } from '../../../../context/filters/property';
@@ -23,7 +20,7 @@ export const useIconLayer = () => {
 
 export const IconLayerProvider = ({children}: any) => {
 	const { setPropertyHoverInfo, setPropertyInfo, setActivePropertyInfo } = useTooltip();
-	const { currentId, setCurrentId } = useProperty();
+	const { currentId, setCurrentId, propertyDict } = useProperty();
 
 	const onClick = (info: any) => {
   		setActivePropertyInfo(true);
@@ -36,8 +33,8 @@ export const IconLayerProvider = ({children}: any) => {
   		setPropertyHoverInfo(info);
   	}
 
-	const iconMapping = 'static/components/map/icons/mapping.json';
-	const iconAtlas = 'static/components/map/icons/atlas.png';
+	const iconMapping = 'static/icons/mapping.json';
+	const iconAtlas = 'static/icons/atlas.png';
 
 	const iconLayer = 
 		new IconLayer({

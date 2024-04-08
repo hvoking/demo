@@ -46,7 +46,6 @@ export const propertyDict: any = [
 		valorVenda: "",
 		imgUrl: "https://static.useimobia.com.br/945/imoveis/84615/P/16904790972052.jpg",
 		coordinates: "-22.539542165427054, -44.16811184730664",
-
 	},
 	{
 		codigoInterno: "",

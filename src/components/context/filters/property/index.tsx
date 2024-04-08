@@ -1,6 +1,9 @@
 // React imports
 import { useState, useContext, createContext } from 'react';
 
+// App imports
+import { propertyDict } from './dict';
+
 const PropertyContext: React.Context<any> = createContext(null)
 
 export const useProperty = () => {
@@ -14,7 +17,7 @@ export const PropertyProvider = ({children}: any) => {
 	
 	return (
 		<PropertyContext.Provider value={{
-			currentId, setCurrentId,
+			currentId, setCurrentId, propertyDict
 		}}>
 			{children}
 		</PropertyContext.Provider>

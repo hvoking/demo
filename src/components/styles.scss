@@ -1,7 +1,7 @@
 .main-wrapper {
-	background-color: rgba(240, 240, 240, 1);
 	height: calc(var(--vh, 1vh) * 100);
   	max-height: calc(var(--vh, 1vh) * 100);
+  	background-color: rgba(240, 240, 240, 1);
   	display: grid;
   	grid-template-columns: 75px auto 25%;
 }
