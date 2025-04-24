@@ -3,11 +3,11 @@
   	max-height: calc(var(--vh, 1vh) * 100);
   	background-color: rgba(240, 240, 240, 1);
   	display: grid;
-  	grid-template-columns: 75px auto 25%;
+  	grid-template-columns: auto 25%;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
 	.main-wrapper {
 	  	grid-template-columns: auto;
-	  	grid-template-rows: 50px 2fr 3fr;
+	  	grid-template-rows: 2fr 3fr;
 	}
 }

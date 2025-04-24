@@ -3,7 +3,7 @@ import { Description } from './description';
 import './styles.scss';
 
 // Context imports
-import { useProperty } from '../../context/filters/property';
+import { useProperty } from 'context/property';
 
 export const Pictures = () => {
 	const { currentId, setCurrentId, propertyDict } = useProperty();

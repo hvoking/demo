@@ -2,7 +2,7 @@
 import { useCallback, Children, cloneElement } from 'react';
 
 // Context imports
-import { usePropertyBarsSizes } from '../../../../../context/sizes/property';
+import { usePropertyBarsSizes } from 'context/sizes/property';
 
 export const SVGWrapper = ({ children }: any) => {
 	const { margin, width, height, setWidth, setHeight } = usePropertyBarsSizes();

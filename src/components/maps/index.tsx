@@ -2,19 +2,17 @@
 import { useCallback } from 'react';
 
 // App imports
-import { Controllers } from './controllers';
 import { Tooltip } from './tooltip';
 import './styles.scss';
 
 // Context imports
-import { useMapbox } from '../context/mapbox';
-import { useGeo } from '../context/filters/geo';
-// Layers imports
-import { useIconLayer } from '../context/maps/layers/icon';
+import { useGeo } from 'context/geo';
+import { useIconLayer } from 'context/icon';
 
 // Third-party imports
-import { Map, useControl } from 'react-map-gl';
+import { Map, useControl, NavigationControl } from 'react-map-gl';
 import { DeckProps } from '@deck.gl/core/typed';
+
 import { MapboxOverlay } from '@deck.gl/mapbox/typed';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -25,8 +23,7 @@ const DeckGLOverlay = (props: DeckProps) => {
 }
 
 export const MapContainer = () => {
-	const { mapRef, currentBasemap } = useMapbox();
-	const { viewport, setMarker, setPlaceCoordinates } = useGeo();
+	const { viewport, setViewport, mapRef, mapStyle } = useGeo();
 	const { iconLayer } = useIconLayer();
 
 	const layers: any = [ iconLayer ];
@@ -34,8 +31,7 @@ export const MapContainer = () => {
 	const onDblClick = useCallback((event: any) => {
 		const lng = event.lngLat.lng;
 		const lat = event.lngLat.lat;
-		setPlaceCoordinates({ longitude: lng, latitude: lat });
-		setMarker({ longitude: lng, latitude: lat });
+		setViewport((prev: any) => ({...prev, longitude: lng, latitude: lat }));
 	}, []);
 
 	return (
@@ -44,7 +40,7 @@ export const MapContainer = () => {
 				ref={mapRef}
 				initialViewState={viewport}
 				mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN} 
-				mapStyle={currentBasemap}
+				mapStyle={mapStyle}
 				onDblClick={onDblClick}
 				doubleClickZoom={false}
 				antialias={true}
@@ -52,7 +48,7 @@ export const MapContainer = () => {
 			>
 				<DeckGLOverlay layers={layers} glOptions={{preserveDrawingBuffer: true}}/>
 				<Tooltip/>
-				<Controllers/>
+				<NavigationControl/>
 			</Map>
 		</div>
 	)

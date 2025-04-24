@@ -2,7 +2,7 @@
 import './styles.scss';
 
 // Context imports
-import { useTooltip } from '../../context/maps/tooltip';
+import { useTooltip } from 'context/tooltip';
 
 export const Tooltip = () => {
 	const { propertyHoverInfo } = useTooltip(); 

@@ -2,8 +2,8 @@
 import { useContext, createContext } from 'react';
 
 // Context imports
-import { useTooltip } from '../../../../context/maps/tooltip';
-import { useProperty } from '../../../../context/filters/property';
+import { useTooltip } from 'context/tooltip';
+import { useProperty } from 'context/property';
 
 // Third party imports
 // @ts-ignore

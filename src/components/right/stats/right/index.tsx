@@ -1,6 +1,6 @@
 // App imports
 import { Bars } from './bars';
-import { usePropertyBarsSizes } from '../../../context/sizes/property';
+import { usePropertyBarsSizes } from 'context/sizes/property';
 import './styles.scss';
 
 export const Right = () => {

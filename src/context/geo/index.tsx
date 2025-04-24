@@ -1,5 +1,5 @@
 // React imports
-import { useState, useEffect, useContext, createContext } from 'react';
+import { useState, useRef, useEffect, useContext, createContext } from 'react';
 
 // App imports
 import * as Locations from './locations';
@@ -13,36 +13,36 @@ export const useGeo = () => {
 }
 
 export const GeoProvider = ({children}: any) => {
+	const mapRef = useRef<any>();
+	
 	const [ cityName, setCityName ] = useState<any>("brusque");
 	const [ placeId, setPlaceId ] = useState<any>(null);
 	
 	const [ viewport, setViewport ] = useState(Locations.brusque);
-	const [ placeCoordinates, setPlaceCoordinates ] = useState<any>(null);
 
 	const [ geocodingLongitude, setGeocodingLongitude ] = useState<any>(null);
 	const [ geocodingLatitude, setGeocodingLatitude ] = useState<any>(null);
 
-	const [ marker, setMarker ] = useState({ 
-		latitude: viewport.latitude, 
-		longitude: viewport.longitude 
-	});
+	const mapStyle = "mapbox://styles/hvoking/clygh6abe01fv01qrd3y0105g";
 
 	useEffect(() => {
-		setViewport({...viewport, ...placeCoordinates});
-		placeCoordinates && setGeocodingLatitude(placeCoordinates.latitude) 
-		placeCoordinates && setGeocodingLongitude(placeCoordinates.longitude)
-	}, [ placeCoordinates ])
+	  mapRef.current?.flyTo({
+	    center: [ viewport.longitude, viewport.latitude ],
+	    zoom: viewport.zoom,
+	    duration: 3000, 
+	    essential: true,
+	  });
+	}, [ viewport ]);
 
 	return (
 		<GeoContext.Provider value={{
 			cityName, setCityName, 
 			placeId, setPlaceId, 
-			marker, setMarker,
-			placeCoordinates, setPlaceCoordinates,
 			viewport, setViewport,
 			geocodingLongitude, setGeocodingLongitude,
 			geocodingLatitude, setGeocodingLatitude,
 			Locations,
+			mapRef, mapStyle
 		}}>
 			{children}
 		</GeoContext.Provider>
